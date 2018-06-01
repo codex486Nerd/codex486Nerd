@@ -3,8 +3,9 @@
 
 # IMPORTANT: Set the URL of your site.
 # Set to https://<username>.github.io when hosting on GitHub Pages
+# (unless you are using a custom domain).https://domain.tld
 # (unless you are using a custom domain).
-url:                   https://codex486nerd.github.io/
+url:                   https://codex486Nerd.github.io/
 
 # IMPORTANT: Set The "base URL" of your site.
 #
@@ -21,32 +22,29 @@ baseurl:               ''
 # You may also provide a location, e.g.: en-us, de_AT.
 lang:                  ko
 
+
 # The title of your blog. Used in the sidebar and the browser tab.
-title:                 Hydejack
+title:                 Codex Lab
 
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description:           >
-  A Jekyll theme with JavaScript powers. "Best Theme by a Mile".
-  Combines the best of static sites and modern web apps.
-  Open `_config.yml` to edit this text.
+  Codex Lab is personal project of program.
 
 # A shorter description for the sidebar.
 tagline:               >
-  A Jekyll theme with JavaScript powers.
-  Open `_config.yml` to edit this text.
-
+  description test
 # A list of keywords for your blog
 keywords:              []
 
 # Used by jekyll-seo-tag...
-logo:                  /assets/icons/icon.png
+logo:                  /assets/img/logo.jpg
 
 # This should be the same author as first entry in `_data/authors.yml`.
 # Duplication is necessary due to the `jekyll-feed`, `jekyll-seo-tag` plugin.
 author:
-  name:                <firstname> <lastname>
-  email:               <mail@domain.tld>
+  name:                Dongju Son
+  email:               ehdwn1991@gamil.com
   # Used by `jekyll-seo-tag`:
   # twitter:             <username>
 
@@ -73,19 +71,21 @@ paginate_path:         /page-:num/
 # ========================================================================================
 
 # Sidebar image and theme color of the site.
-accent_image:          /assets/img/sidebar-bg.jpg
+accent_image:          /assets/background/side-1.jpg
 accent_color:          '#4fb1ba'
 
 # The string encoding which fonts to fetch from Google Fonts.
 # See: <https://qwtel.com/hydejack/docs/configuration/>
 #google_fonts:          Roboto+Slab:700|Noto+Sans:400,400i,700,700i
-google_fonts:           Nanum+Gothic:400,700&amp;subset=korean
+google_fonts:		Nanum+Gothic+Coding:400,700|Nanum+Gothic:700,800|Noto+Sans:400,400i|Roboto:700&amp;subset=korean
 # The text font. Expects a string that is a valid CSS font-family value.
-#font:                  Noto Sans, Helvetica, Arial, sans-serif
-font:                   'Nanum Gothic', sans-serif
+#font:                 Noto Sans, Helvetica, Arial, sans-serif
+font:                  Nanum Gothic Coding, monospace, Helvetica, Arial
+
 # The font used for headings. Expects a string that is a valid CSS font-family value.
 #font_heading:          Roboto Slab, Helvetica, Arial, sans-serif
-font_heading:           'Nanum Gothic', sans-serif
+font_heading:           Nanum Gothic, Helvetica, Arial, sans-serif
+
 # 3rd Party Integrations
 # ----------------------------------------------------------------------------------------
 
@@ -95,7 +95,7 @@ font_heading:           'Nanum Gothic', sans-serif
 
 # Setting a disqus shortname will enable the comment section on
 # pages with `comments: true` in the front matter.
-# disqus:                <disqus_shortname>
+disqus:                codexpro
 
 # Setting a tinyletter username will enable the newsletter subscription box.
 # tinyletter:            <tinyletter_username>
