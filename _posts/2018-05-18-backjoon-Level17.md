@@ -10,8 +10,6 @@ categories: [backjoon]
 tag: [c,backjoon_level]
 author: author2
 ---
-## Level17
-{:.no_toc}
 * . 
 {:toc}
 ## [10871번[윷놀이]](https://www.acmicpc.net/problem/2490)
@@ -39,7 +37,7 @@ int main(){
 }
 ```
 
-## [2490번[윷놀이]](https://www.acmicpc.net/problem/2490)
+## 2490번 윷놀이
 ```c
 #include <stdio.h>
 #include <stdlib.h>
