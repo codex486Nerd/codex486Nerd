@@ -1,0 +1,143 @@
+---
+# Copyright (c) 2017 Florian Klampfer <https://qwtel.com/>
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+layout: base
+---
+{% if page.title.size > 0 %}
+  <header>
+    <h1 class="page-title">{{ page.title }}</h1>
+    {% include message.html text=page.description hide=page.hide_description %}
+  </header>
+  <hr class="sr-only"/>
+{% endif %}
+
+{{ content }}
+
+{% assign category = site.featured_categories | where: "slug", page.slug | first %}
+{% if category %}
+  {% assign posts = site.categories[page.slug]  | sort: 'title','first' | reverse%}
+{% else %}
+  {% assign tag = site.featured_tags | where: "slug", page.slug | first %}
+  {% if tag %}
+    {% assign posts = site.tags[page.slug]  | sort: 'title','first' | reverse%}
+  {% else %}
+    {% assign posts = site.posts  | sort: 'title','first' | reverse%}
+  {% endif %}
+{% endif %}
+
+{% assign list_entry    = date_formats.list_entry    | default:"%d %b" %}
+{% for post in posts%}
+
+<h4><li><a href="{{ post.url}}">
+<span>{{ post.title }}</span>
+
+</a>
+</li>
+</h4>
+{% include post-list-item.html post=post format=list_entry %}
+<!--<p>{{ posts.description }}</p>-->
+ <!-- <p><a href="{{ posts.url}}">{{ posts.title }}</a></p>-->
+{% endfor %}
+
+<!--
+{% assign rawtags = "" %}
+
+{% for post in site.posts %}
+
+	{% assign ttags = post.tags | join:'|' | append:'|' %}
+
+	{% assign rawtags = rawtags | append:ttags %}
+
+{% endfor %}
+
+{% assign rawtags = rawtags | split:'|' | sort %}
+
+
+
+{% assign tags = "" %}
+
+{% for tag in rawtags %}
+
+	{% if tag != "" %}
+
+		{% if tags == "" %}
+
+			{% assign tags = tag | split:'|' %}
+
+		{% endif %}
+
+		{% unless tags contains tag %}
+
+			{% assign tags = tags | join:'|' | append:'|' | append:tag | split:'|' %}
+
+		{% endunless %}
+
+	{% endif %}
+
+{% endfor %}
+-->
+<!--
+{% for tag in tags %}
+
+	<h2 id="{{ tag | slugify }}">{{ tag }}</h2>
+
+	<ul>
+
+	 {% for post in site.posts %}
+
+		 {% if post.tags contains tag %}
+
+		 <li>
+
+		 <h3>
+
+		 <a href="{{ post.url }}">
+
+		 {{ post.title }}
+
+		 <small>{{ post.date | date_to_string }}</small>
+
+		 </a>
+
+		 {% for tag in post.tags %}
+
+			 {{ tag }}
+
+		 {% endfor %}
+
+		 </h3>
+
+		 </li>
+
+		 {% endif %}
+
+	 {% endfor %}
+
+	</ul>
+
+{% endfor %} 
+
+-->
+<!--
+{% for tag in tags %}
+	<a href="#{{ tag | slugify }}"> {{ tag }} </a>
+{% endfor %}
+-->
